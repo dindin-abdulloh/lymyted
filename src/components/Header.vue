@@ -5,6 +5,7 @@ import { ref } from 'vue'
 const isMenu = ref(false)
 
 const onMenuOpen = () => {
+    console.log("TEST");
     isMenu.value = !isMenu.value
 }
 </script>
@@ -16,33 +17,15 @@ const onMenuOpen = () => {
 
     Off-canvas menu for mobile, show/hide based on off-canvas menu state.
   -->
-  <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
-    <!--
-      Off-canvas menu backdrop, show/hide based on off-canvas menu state.
-
-      Entering: "transition-opacity ease-linear duration-300"
-        From: "opacity-0"
-        To: "opacity-100"
-      Leaving: "transition-opacity ease-linear duration-300"
-        From: "opacity-100"
-        To: "opacity-0"
-    -->
+  <div v-if="isMenu" class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
+   
     <div class="fixed inset-0 bg-black bg-opacity-25"></div>
 
-    <div v-if="isMenu" class="fixed inset-0 z-40 flex">
-      <!--
-        Off-canvas menu, show/hide based on off-canvas menu state.
-
-        Entering: "transition ease-in-out duration-300 transform"
-          From: "-translate-x-full"
-          To: "translate-x-0"
-        Leaving: "transition ease-in-out duration-300 transform"
-          From: "translate-x-0"
-          To: "-translate-x-full"
-      -->
+    <div  class="fixed inset-0 z-40 flex">
+    
       <div  class="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
         <div class="flex px-4 pb-2 pt-5">
-          <button type="button" class="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
+          <button @click="onMenuOpen" type="button" class="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Close menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -327,7 +310,7 @@ const onMenuOpen = () => {
                 -->
                 <div class="absolute inset-x-0 top-full text-sm text-gray-500">
                   <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                  <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
+                  <div v-if="isMenu" class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
 
                   <div v-if="isMenu" class="relative bg-white">
                     <div class="mx-auto max-w-7xl px-8">
@@ -439,7 +422,7 @@ const onMenuOpen = () => {
               <div class="flex">
                 <div class="relative flex">
                   <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" -->
-                  <button type="button" class="border-transparent text-gray-700 hover:text-gray-800 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out" aria-expanded="false">Men</button>
+                  <button @click="onMenuOpen" type="button" class="border-transparent text-gray-700 hover:text-gray-800 relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out" aria-expanded="false">Men</button>
                 </div>
 
                 <!--
@@ -456,7 +439,7 @@ const onMenuOpen = () => {
                   <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
                   <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
 
-                  <div class="relative bg-white">
+                  <div v-if="isMenu" class="relative bg-white">
                     <div class="mx-auto max-w-7xl px-8">
                       <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
                         <div class="col-start-2 grid grid-cols-2 gap-x-8">
