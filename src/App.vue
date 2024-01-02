@@ -2,12 +2,18 @@
 
 import Support from './components/Support.vue'
 import Header from './components/Header.vue'
+import ProductMainSection from './components/ProductMainSection.vue'
+import HerBanner from './components/HerBanner.vue'
+
 </script>
 
 <template>
   
   <Support/>
   <Header/>
+  <ProductMainSection/>
+  <HerBanner/>
+
 </template>
 
 <style scoped>

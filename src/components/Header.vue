@@ -273,7 +273,7 @@ const onMenuOpen = () => {
       <div class="border-b border-gray-200">
         <div class="flex h-16 items-center">
           <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
-          <button type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
+          <button @click="onMenuOpen" type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">

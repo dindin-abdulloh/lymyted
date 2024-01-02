@@ -9,7 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.11"
+    "@mdi/font": "^7.4.47",
+    "@splidejs/vue-splide": "^0.6.12",
+    "add": "^2.0.6",
+    "swiper": "9.4.1",
+    "vue": "^3.3.11",
+    "yarn": "^1.22.21"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",

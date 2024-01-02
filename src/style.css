@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Shadows+Into+Light&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+
+.header-title {
+    font-family: 'Josefin Sans', sans-serif;
+}
+.title-product{
+    font-family: 'Fjalla One', sans-serif;
+}
+.sub-title-product{
+    font-family: 'Shadows Into Light', cursive;
+
+}

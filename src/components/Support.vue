@@ -1,6 +1,6 @@
 <template>
-    <div :class="currentColorClass" class="color-transition p-3">
-      <p class="text-transition text-xl font-semibold" :class="currentTextColorClass">
+    <div :class="currentColorClass" class="color-transition p-2">
+      <p class="text-transition text-lg font-semibold" :class="currentTextColorClass">
         {{ currentText }}
       </p>
     </div>
