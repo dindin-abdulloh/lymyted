@@ -1,9 +1,16 @@
 
 <template>
     <div class="container mt-10 mb-10">
-        <swiper :pagination="{
-            type: 'progressbar',
-        }" :navigation="true" :modules="modules" class="mySwiper">
+        <swiper
+            :style="{
+                '--swiper-navigation-color': '#fff',
+                '--swiper-pagination-color': '#fff',
+            }"
+            :pagination="{
+                type: 'progressbar',
+            }" 
+            :navigation="true" 
+            :modules="modules" class="mySwiper">
             <swiper-slide class="border slide-1">
 
                 <div class="lg:w-1/2">
