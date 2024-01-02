@@ -1,9 +1,9 @@
+
 <template>
     <div class="container mt-10 mb-10">
         <swiper :pagination="{
             type: 'progressbar',
-        }" 
-        :navigation="true" :modules="modules" class="mySwiper">
+        }" :navigation="true" :modules="modules" class="mySwiper">
             <swiper-slide class="border slide-1">
 
                 <div class="lg:w-1/2">
@@ -46,44 +46,56 @@
 
 
             </swiper-slide>
-            <swiper-slide class="border slide-3">
+            <swiper-slide>
+                <swiper-slide class="border slide-3">
 
-                <div class="lg:w-1/2">
-                    <img class="" src="../assets/images/kids.png" alt="">
-                </div>
-                <div class="lg:w-1/2">
-                    <div class="w-full h-full">
-                        <div class="text-[#8fbfc4] text-4xl mb-1">
-                            <p class="title-product">For <span class="sub-title-product">Kids</span></p>
-                        </div>
-                        <div class="lg:p-6">
-                            <p class="text-gray-400 lg:text-base sm:text-xs">
-                                Our top selects for your favourite men. We are talking indoor boule for your brother,
-                                personalised corkscrew for your dad and hip flask for grandad.
-                            </p>
+                    <div class="lg:w-1/2">
+                        <img class="" src="../assets/images/kids.png" alt="">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="w-full h-full">
+                            <div class="text-[#8fbfc4] text-4xl mb-1">
+                                <p class="title-product">For <span class="sub-title-product">Kids</span></p>
+                            </div>
+                            <div class="lg:p-6">
+                                <p class="text-gray-400 lg:text-base sm:text-xs">
+                                    Our top selects for your favourite men. We are talking indoor boule for your brother,
+                                    personalised corkscrew for your dad and hip flask for grandad.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </swiper-slide>
             </swiper-slide>
         </swiper>
     </div>
 </template>
-<script setup>
-
-// import { ref } from 'vue';
+<script>
+// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
 import 'swiper/css';
+
+import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
 
-    
-const modules = [Navigation];
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
 
-
-  
+export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    setup() {
+        return {
+            modules: [Pagination, Navigation],
+        };
+    },
+};
 </script>
-
 <style scoped>
 .swiper {
     width: 100%;
@@ -132,7 +144,4 @@ const modules = [Navigation];
     color: #fff;
     /* Set the text color */
 }
-
-
 </style>
-
