@@ -106,7 +106,7 @@ export default {
 <style scoped>
 .swiper {
     width: 100%;
-    height: 350px;
+    height: 300px;
 }
 
 .slide-1 {
