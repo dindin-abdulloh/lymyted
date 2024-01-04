@@ -9,8 +9,9 @@
             :pagination="{
                 type: 'progressbar',
             }" 
+            @swiper="onSwiper"
             :navigation="true" 
-            :modules="modules" class="mySwiper">
+            :modules="modules" class="swiper" >
             <swiper-slide class="border slide-1">
 
                 <div class="lg:w-1/2">
@@ -90,6 +91,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
+import { ref } from 'vue';
 
 export default {
     components: {
@@ -97,8 +99,19 @@ export default {
         SwiperSlide,
     },
     setup() {
+        const swiper =  ref(null)
+        const onSwiper = (swiper) => {
+            swiper.value = swiper
+        }
+
+        const handleSlideTo = () => {
+           console.log(swiper);
+        }
         return {
             modules: [Pagination, Navigation],
+            swiper,
+            onSwiper,
+            handleSlideTo
         };
     },
 };
